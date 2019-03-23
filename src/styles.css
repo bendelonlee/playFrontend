@@ -9,8 +9,14 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: fixed;
+  width: 100%;
 }
 #title {
   font-family: cursive;
   font-size: 40px;
+}
+
+.super-tall {
+  height: 2000px;
 }
