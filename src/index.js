@@ -1,1 +1,2 @@
-import './styles.css';
+import { artistSearch } from './requests.js';
+artistSearch(118)
