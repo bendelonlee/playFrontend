@@ -1,2 +1,5 @@
-import { artistSearch } from './requests.js';
-artistSearch(118)
+import { artistSearchDisplayer } from './requests.js';
+
+
+
+artistSearchRequest(118)
