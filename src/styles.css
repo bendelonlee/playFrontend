@@ -1,3 +1,22 @@
 body {
-  background-color: blue;
+
+}
+
+nav {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
+#title {
+  font-family: cursive;
+  font-size: 40px;
+}
+
+.super-tall {
+  height: 2000px;
 }
