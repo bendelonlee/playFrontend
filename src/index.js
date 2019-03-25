@@ -1,5 +1,5 @@
-import { artistSearchDisplayer } from './requests.js';
+import './styles.css';
 
+import { ArtistSearch } from './searches.js';
 
-
-artistSearchRequest(118)
+new ArtistSearch('queen').fetch_and_render();
