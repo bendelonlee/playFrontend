@@ -1,5 +1,8 @@
+const $ = require("jquery");
 import './styles.css';
 
-import { ArtistSearch } from './searches.js';
+import { Listener } from './listener.js';
 
-new ArtistSearch('queen').fetch_and_render();
+$(document).ready(function() {
+  Listener.prototype.start();
+});
