@@ -12,10 +12,6 @@ nav {
   position: fixed;
   width: 100%;
 }
-#title {
-  font-family: cursive;
-  font-size: 40px;
-}
 
 .super-tall {
   height: 2000px;
@@ -23,4 +19,24 @@ nav {
 
 .favorite-song {
   color: gold;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "songs favorites"
+}
+
+#songs {
+  grid-area: songs;
+}
+
+#favorites {
+  grid-area: favorites;
+}
+
+#title {
+  font-family: cursive;
+  font-size: 40px;
 }

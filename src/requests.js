@@ -1,4 +1,14 @@
 const $ = require("jquery");
+const backendAddress = 'http://play-backend.herokuapp.com'
+import { favoritesRenderer } from './renderers'
+
+export const getFavorites = () => {
+  fetch(`${backendAddress}/api/v1/favorites`).then( (result) =>
+    result.json()
+  ).then( (myJson) => {
+    favoritesRenderer(myJson)
+  });
+}
 
 export const artistSearchRequest = (name, renderer) => {
   const tracksByArtist = (artist) => {
