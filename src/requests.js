@@ -12,26 +12,24 @@ export const artistSearchRequest = (name, renderer) => {
       dataType: 'jsonp',
       jsonpCallback: 'jsonp_callback',
       success: function(result){
-        new Promise(function(resolve, reject) {
-          renderer(artist, result.message.body.track_list);
-        });
+        renderer(artist, result.message.body.track_list);
       }
     });
   }
 
   const artistByName = (name, nextRequest) => {
-    return $.ajax({url: `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&quorum_factor=1&apikey=60c354a43ae452685248b841bfa271e2&q_artist=${name}`,
+    $.ajax({url: `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&quorum_factor=1&apikey=60c354a43ae452685248b841bfa271e2&q_artist=${name}`,
       data: {
         format: 'jsonp',
         callback: 'jsonp_callback'
       },
       dataType: 'jsonp',
       jsonpCallback: 'jsonp_callback',
-      success: function(result){
+      success: (result) => {
         let artist = result.message.body.artist_list[0].artist;
-        return nextRequest(artist);
+        nextRequest(artist);
       }
     });
   }
-  return artistByName(name, tracksByArtist);
+  artistByName(name, tracksByArtist);
 }
