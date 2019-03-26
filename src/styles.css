@@ -24,8 +24,8 @@ nav {
 #grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-template-areas: "songs favorites"
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "songs favorites" "playlists playlists"
 }
 
 #songs {
@@ -34,6 +34,10 @@ nav {
 
 #favorites {
   grid-area: favorites;
+}
+
+#playlists {
+  grid-area: playlists;
 }
 
 #title {
