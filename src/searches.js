@@ -8,6 +8,6 @@ export class ArtistSearch {
     this.renderer = artistSearchRenderer
   }
   fetch_and_render() {
-    this.request(this.artist, this.renderer);
+    return this.request(this.artist, this.renderer);
   }
 }

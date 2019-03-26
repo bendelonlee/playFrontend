@@ -12,7 +12,9 @@ export const artistSearchRequest = (name, renderer) => {
       dataType: 'jsonp',
       jsonpCallback: 'jsonp_callback',
       success: function(result){
-        renderer(artist, result.message.body.track_list)
+        new Promise(function(resolve, reject) {
+          renderer(artist, result.message.body.track_list);
+        });
       }
     });
   }
@@ -27,9 +29,9 @@ export const artistSearchRequest = (name, renderer) => {
       jsonpCallback: 'jsonp_callback',
       success: function(result){
         let artist = result.message.body.artist_list[0].artist;
-        nextRequest(artist);
+        return nextRequest(artist);
       }
     });
   }
-  artistByName(name, tracksByArtist);
+  return artistByName(name, tracksByArtist);
 }
