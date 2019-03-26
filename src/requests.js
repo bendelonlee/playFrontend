@@ -33,3 +33,21 @@ export const artistSearchRequest = (name, renderer) => {
   }
   artistByName(name, tracksByArtist);
 }
+
+export const addFavorite = (songOnDom) => {
+  let backendAddress = 'http://play-backend.herokuapp.com'
+  let song = {
+    name: songOnDom.find('.song-name').html().split(': ')[1],
+    genre: '',
+    rating: songOnDom.find('.rating').html().split(': ')[1]
+  }
+
+  fetch(`${backendAddress}/api/v1/favorites`, {
+    method: 'POST',
+    body: JSON.stringify(song),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  });
+}

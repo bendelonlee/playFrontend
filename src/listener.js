@@ -1,4 +1,5 @@
 import { ArtistSearch } from './searches.js';
+import { addFavorite } from './requests.js';
 const $ = require("jquery");
 
 export class Listener {
@@ -15,16 +16,19 @@ export class Listener {
       search();
     });
     $('#search-input').keyup(function (key) {
-    if (key.which == 13) {
-      search();
-    }
-  });
+      if (key.which == 13) {
+        search();
+      }
+    });
   }
 
   starListener() {
     $(".fa-star").click(function (e) {
-    $(this).css('font-weight', 'bold')
-    // addFavorite($('#current-weather').attr('data'))
-  });
+      $(this).css('font-weight', 'bold')
+      addFavorite($(this).parent())
+    });
   }
+
+
+
 }
