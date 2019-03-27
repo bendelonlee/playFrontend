@@ -65,7 +65,6 @@ export const artistSearchRequest = (name, renderer) => {
 }
 
 export const addFavorite = (songOnDom) => {
-  let backendAddress = 'http://play-backend.herokuapp.com'
   let song = {
     name: songOnDom.find('.song-name').html().split(': ')[1],
     genre: '',
