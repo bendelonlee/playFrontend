@@ -24,8 +24,11 @@ export const favoritesRenderer = (favorites) => {
 }
 
 export const playlistsRenderer = (playlsts) => {
-  playlsts.forEach((playlist) => {
+  $('#playlists').empty();
+  $('#playlist-select').empty();
+  $('#playlists').append('<h2>Playlists</h2>');
 
+  playlsts.forEach((playlist) => {
     $('#playlists').append(playlistHtml(playlist));
     $('#playlist-select').append(`<option value="${playlist.id}">${playlist.title}</option>`);
     playlist.favorites.forEach( (favorite) => {
