@@ -68,6 +68,7 @@ export const addFavorite = (songOnDom) => {
   let song = {
     name: songOnDom.find('.song-name').html().split(': ')[1],
     genre: '',
+    artist_name: $('#current-artist').html(),
     rating: songOnDom.find('.rating').html().split(': ')[1]
   }
 
