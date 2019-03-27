@@ -18,6 +18,17 @@ export const getPlaylists = () => {
   });
 }
 
+
+export const addFavoriteToPlaylist = (playlistId, favoriteId) => {
+  fetch(`${backendAddress}/api/v1/playlists/${playlistId}/favorites/${favoriteId}`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  });
+}
+
 export const artistSearchRequest = (name, renderer) => {
   const tracksByArtist = (artist) => {
     let id = artist.artist_id;
@@ -34,6 +45,7 @@ export const artistSearchRequest = (name, renderer) => {
       }
     });
   }
+
 
   const artistByName = (name, nextRequest) => {
     $.ajax({url: `https://api.musixmatch.com/ws/1.1/artist.search?format=jsonp&callback=callback&quorum_factor=1&apikey=60c354a43ae452685248b841bfa271e2&q_artist=${name}`,
