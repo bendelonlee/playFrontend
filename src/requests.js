@@ -1,5 +1,5 @@
 const $ = require("jquery");
-const backendAddress = 'http://play-backend.herokuapp.com'
+const backendAddress = 'https://play-backend.herokuapp.com'
 import { favoritesRenderer, playlistsRenderer } from './renderers'
 
 export const getFavorites = () => {
