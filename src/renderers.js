@@ -8,7 +8,7 @@ import { playlistHtml } from './html/playlists-html.js';
 
 export const artistSearchRenderer = (artist, tracks) => {
   $('#songs').empty();
-  $('#songs').append('<h2>Search Results</h2>');
+  $('#songs').append(`<h2>Search Results for <span id="current-artist">${artist.artist_name}</span></h2>`);
 
   tracks.forEach(function (track) {
     $('#songs').append(song(track))
