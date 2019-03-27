@@ -1,4 +1,5 @@
 import { ArtistSearch } from './searches.js';
+import { favoriteHtml } from './html/favorites-html.js';
 import { addFavorite, addFavoriteToPlaylist, getPlaylists } from './requests.js';
 const $ = require("jquery");
 
@@ -26,6 +27,12 @@ export class Listener {
     $(".fa-star").click(function (e) {
       $(this).css('font-weight', 'bold');
       addFavorite($(this).parent());
+      let favorite = {
+        name: $(this).parent().find(".song-name").html().split(': ')[1],
+        artist_name: $('#current-artist').html(),
+        rating: $(this).parent().find(".rating").html().split(': ')[1]
+      }
+      $('#favorites').append(favoriteHtml(favorite))
     });
   }
 
