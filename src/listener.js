@@ -1,5 +1,5 @@
 import { ArtistSearch } from './searches.js';
-import { addFavorite } from './requests.js';
+import { addFavorite, addFavoriteToPlaylist } from './requests.js';
 const $ = require("jquery");
 
 export class Listener {
@@ -31,7 +31,15 @@ export class Listener {
 
   playlistTitleListener() {
     $(".playlist-title").click( function (e) {
-      this.parentElement.children[1].removeAttribute('hidden'); 
+      this.parentElement.children[1].removeAttribute('hidden');
+    });
+  }
+
+  addToPlaylistListener() {
+    $(".add-to-playlist-button").click( function (e) {
+      let favoriteId = this.getAttribute('data');
+      let playlistId = $('#playlist-select').val();
+      addFavoriteToPlaylist(playlistId, favoriteId);
     });
   }
 
