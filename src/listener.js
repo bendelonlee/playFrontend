@@ -24,8 +24,14 @@ export class Listener {
 
   starListener() {
     $(".fa-star").click(function (e) {
-      $(this).css('font-weight', 'bold')
-      addFavorite($(this).parent())
+      $(this).css('font-weight', 'bold');
+      addFavorite($(this).parent());
+    });
+  }
+
+  playlistTitleListener() {
+    $(".playlist-title").click( function (e) {
+      this.parentElement.children[1].removeAttribute('hidden'); 
     });
   }
 
