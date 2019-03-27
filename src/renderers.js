@@ -24,7 +24,6 @@ export const playlistsRenderer = (playlsts) => {
 
     $('#playlists').append(playlistHtml(playlist))
     playlist.favorites.forEach( (favorite) => {
-      debugger;
       $(`#playlist-${playlist.id}`).find('.playlist-songs').append(
         `
         <li>${favorite.name}</li>
@@ -32,5 +31,5 @@ export const playlistsRenderer = (playlsts) => {
       )
     });
   });
-
+  Listener.prototype.playlistTitleListener();
 }
