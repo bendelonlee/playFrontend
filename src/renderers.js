@@ -17,6 +17,7 @@ export const favoritesRenderer = (favorites) => {
   favorites.forEach(function (favorite) {
     $('#favorites').append(favoriteHtml(favorite))
   });
+  Listener.prototype.addToPlaylistListener();
 }
 
 export const playlistsRenderer = (playlsts) => {

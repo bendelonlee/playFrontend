@@ -31,7 +31,14 @@ export class Listener {
 
   playlistTitleListener() {
     $(".playlist-title").click( function (e) {
-      this.parentElement.children[1].removeAttribute('hidden'); 
+      this.parentElement.children[1].removeAttribute('hidden');
+    });
+  }
+
+  addToPlaylistListener() {
+    $(".add-to-playlist-button").click( function (e) {
+      favoriteId = this.getAttribute('data');
+      playlistId = $('playlist-select').val();
     });
   }
 
