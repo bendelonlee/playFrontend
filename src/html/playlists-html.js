@@ -1,8 +1,8 @@
 export const playlistHtml = (playlist) => {
-  return `<ul>
+  return `<ul id="playlist-${playlist.id}">
     <li class="title"> ${playlist.title} </li>
-    <ul hidden class="playlist-songs">
-      
-    </ul>
+    <ol hidden class="playlist-songs">
+
+    </ol>
   </ul>`
 }
